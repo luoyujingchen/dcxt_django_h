@@ -24,4 +24,4 @@ from dcxt.models import Dish
 class DishSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Dish
-        fields = ('name','price','discount_price','discount','pictures','weight','introduction')
+        fields = ('name','price','discount_price','discount','weight','introduction')
