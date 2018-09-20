@@ -18,5 +18,7 @@ from django.urls import path, include, re_path
 from WebClient import views
 
 urlpatterns = [
-    path('addDish/',views.go_add_dish)
+    path('addDish/', views.go_add_dish),
+    path('gogo/', views.gogo)
+
 ]
