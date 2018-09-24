@@ -7,4 +7,4 @@ def go_add_dish(request):
 
 
 def gogo(request):
-    return (request,'addDish.html')
+    return render(request,'addDish.html')

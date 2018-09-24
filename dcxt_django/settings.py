@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'RESTfulApi',
     'dcxt',
     'WebClient',
+    'multiuploader',
     'testmm',
 ]
 

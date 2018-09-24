@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('RESTfulApi.urls')),
     path('img/',include('testmm.urls')),
-    path('web/',include('WebClient.urls'))
+    path('web/',include('WebClient.urls')),
+    path('upload',include('multiuploader.urls')),
 ]
