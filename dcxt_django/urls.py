@@ -23,5 +23,5 @@ urlpatterns = [
     path('api/', include('RESTfulApi.urls')),
     path('img/',include('testmm.urls')),
     path('web/',include('WebClient.urls')),
-    path('upload',include('multiuploader.urls')),
+    path('upload/',include('multiuploader.urls')),
 ]

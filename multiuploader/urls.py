@@ -13,9 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import re_path, path
+
+from multiuploader import views
 
 urlpatterns = [
-    path('img',),
+    path('uploadhome',views.uploadHome),
+    re_path(r'^multiuploader_delete_multiple/$', views.multiuploader_delete_multiple,
+        name='multiuploader_delete_multiple'),
+    re_path(r'^multiuploader_delete/(?P<pk>\w+)/$', views.multiuploader_delete,
+        name='multiuploader_delete'),
+    re_path(r'^multiuploader/$', views.multiuploader, name='multiuploader'),
+    re_path(r'^multiuploader_noajax/$', views.multiuploader, kwargs={"noajax": True},
+        name='multiploader_noajax'),
+    re_path(r'^multiuploader_file/(?P<pk>\w*)/$', views.multi_show_uploaded,
+        name='multiuploader_file_link'),
+    re_path(r'^multiuploader_get_files_noajax/$', views.multi_get_files, kwargs={"noajax": True},
+        name='multiuploader_get_files_noajax'),
+    re_path(r'^multiuploader_get_files/(?P<fieldname>\w*)/$', views.multi_get_files,
+        name='multi_get_files'),
 ]
